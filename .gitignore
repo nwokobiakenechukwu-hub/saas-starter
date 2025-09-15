@@ -1,0 +1,21 @@
+# Node
+node_modules/
+
+# Builds
+dist/
+build/
+.next/
+out/
+coverage/
+
+# Env
+.env
+.env.* 
+apps/*/.env
+apps/*/.env.*
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,10 @@
+packages:
+  - apps/*
+
+ignoredBuiltDependencies:
+  - '@parcel/watcher'
+  - '@prisma/client'
+  - '@prisma/engines'
+  - '@scarf/scarf'
+  - esbuild
+  - prisma

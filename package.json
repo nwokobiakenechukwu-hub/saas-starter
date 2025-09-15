@@ -1,0 +1,27 @@
+{
+  "name": "saas-starter",
+  "private": true,
+  "packageManager": "pnpm@10.16.1",
+  "scripts": {
+    "dev:api": "pnpm --filter api dev",
+    "dev:web": "pnpm --filter web dev",
+    "dev": "concurrently -n api,web -c blue,magenta \"pnpm dev:api\" \"pnpm dev:web\"",
+    "db:up": "docker compose -f docker-compose.dev.yml up -d",
+    "db:down": "docker compose -f docker-compose.dev.yml down -v",
+    "prisma:generate": "pnpm --filter api prisma:generate",
+    "prisma:migrate": "pnpm --filter api prisma:migrate",
+    "seed": "pnpm --filter api seed"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "zod": "3.23.8"
+    }
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "sass": "^1.92.1"
+  }
+}

@@ -1,0 +1,46 @@
+@use "sass:list";
+
+$pp-pink:   #FF3B7E;
+$pp-blue:   #47C5FB;
+$ink-rgb:   18, 20, 24;
+
+$radius-lg: 16px;
+$radius-md: 12px;
+$ease:      .2s ease;
+
+$bp-md:     900px;
+$bp-sm:     640px;
+
+@function rgba-rgb($rgb, $alpha) {
+  @return rgba(list.nth($rgb, 1), list.nth($rgb, 2), list.nth($rgb, 3), $alpha);
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 36px 20px;
+}
+
+.card {
+  border: 1.5px solid $pp-blue;
+  border-radius: $radius-lg;
+  padding: 20px;
+  box-shadow:
+    0 8px 18px rgba(15,23,42,.06),
+    0 16px 36px rgba(71,197,251,.08);
+  background: linear-gradient(0deg, transparent, transparent) padding-box;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba-rgb($ink-rgb, .14);
+  background: rgba(2,6,23,.06);
+  cursor: pointer;
+  transition: transform .18s $ease, box-shadow .18s $ease;
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(15,23,42,.08), 0 16px 36px rgba(71,197,251,.16);
+  }
+}
